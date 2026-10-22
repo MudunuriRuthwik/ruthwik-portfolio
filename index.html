@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruthwik Mudunuri – AI tools for design teams</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E8EDF1;--surface:#F6F8FA;--ink:#13213A;--muted:#52607A;--line:#C3CCD8;--accent:#E8501A;--accent-ink:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1726;--surface:#17223A;--ink:#E7ECF4;--muted:#9AA8C2;--line:#2C3B59;--accent:#FF7A45;--accent-ink:#0F1726;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1726;--surface:#17223A;--ink:#E7ECF4;--muted:#9AA8C2;--line:#2C3B59;--accent:#FF7A45;--accent-ink:#0F1726;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem;flex-wrap:wrap}
+nav b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem}
+nav div{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{padding:3.5rem 0 2rem}
+.hero h1{font-size:clamp(2.3rem,6.2vw,4.6rem);font-weight:800;letter-spacing:-.02em;max-width:15ch}
+.hero p{max-width:60ch;color:var(--muted);margin:1.4rem 0 0;font-size:1.15rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.btn{display:inline-block;padding:.75rem 1.2rem;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+section{padding:3.2rem 0}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;margin-bottom:.6rem}
+.lede{color:var(--muted);max-width:62ch;margin:0 0 1.8rem}
+/* friction log */
+.log{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;border:2px solid var(--ink);border-radius:10px;overflow:hidden;background:var(--surface)}
+.log ul{list-style:none;margin:0;padding:0;border-right:2px solid var(--ink)}
+.log li button{all:unset;box-sizing:border-box;display:block;width:100%;padding:1rem 1.1rem;cursor:pointer;border-bottom:1px solid var(--line);font-style:italic}
+.log li:last-child button{border-bottom:0}
+.log li button[aria-selected="true"]{background:var(--ink);color:var(--bg);font-style:normal}
+.log li button:focus-visible{outline-offset:-4px}
+.panel{padding:1.4rem 1.5rem}
+.panel dt{font-weight:700;color:var(--accent);font-size:.95rem;margin-top:1rem}
+.panel dt:first-child{margin-top:0}
+.panel dd{margin:.2rem 0 0}
+.note{font-size:.9rem;color:var(--muted);margin-top:.8rem}
+/* projects */
+.proj{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:1.5rem;padding:2rem 0;border-top:2px solid var(--ink)}
+.proj h3{font-size:1.5rem;font-weight:700}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.tags span{font-size:.82rem;border:1px solid var(--line);background:var(--surface);padding:.15rem .55rem;border-radius:99px;color:var(--muted)}
+.proj ul{margin:.4rem 0 0;padding-left:1.1rem}.proj li{margin:.3rem 0}
+.why{margin-top:1rem;padding:.8rem 1rem;border-left:4px solid var(--accent);background:var(--surface)}
+/* fit */
+.fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.fit div{border-top:2px solid var(--ink);padding-top:.8rem}
+.fit h3{font-size:1.1rem;margin-bottom:.3rem}.fit p{margin:0;color:var(--muted);font-size:.98rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.two h3{font-size:1.2rem;margin-bottom:.5rem}
+footer{padding:3rem 0 2.5rem;border-top:2px solid var(--ink)}
+footer h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+footer p{color:var(--muted)}
+@media (max-width:760px){.log{grid-template-columns:1fr}.log ul{border-right:0;border-bottom:2px solid var(--ink)}.proj{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Ruthwik Mudunuri</b><div><a href="#friction">Friction log</a><a href="#work">Projects</a><a href="#fit">Fit</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<h1>I build small AI tools that remove friction from creative work.</h1>
+<p>Final-year B.Tech CSE student (SRM, CGPA 8.85). I build machine learning and computer vision apps in Python and Flask, and I care most about making the output understandable to someone who isn’t an engineer. That is the skill I’d bring to Ather’s Industrial Design team.</p>
+<div class="btns"><a class="btn main" href="#friction">See how I think about designer problems</a><a class="btn" href="#work">View projects</a></div>
+</header>
+
+<section id="friction">
+<h2>Friction log: from complaint to tool</h2>
+<p class="lede">The role is about finding the real problem behind what designers say. Here is how I would work through four typical complaints. These are my proposed approaches, not shipped work. Pick one.</p>
+<div class="log">
+<ul role="tablist" aria-label="Designer complaints" id="tabs">
+<li><button role="tab" aria-selected="true" data-i="0">“I can’t find that reference I saved last month.”</button></li>
+<li><button role="tab" aria-selected="false" data-i="1">“Making variations for review takes all afternoon.”</button></li>
+<li><button role="tab" aria-selected="false" data-i="2">“Nobody knows which AI tool is worth trying.”</button></li>
+<li><button role="tab" aria-selected="false" data-i="3">“I explain the same file naming rules every week.”</button></li>
+</ul>
+<div class="panel" role="tabpanel" aria-live="polite"><dl id="out"></dl></div>
+</div>
+</section>
+
+<section id="work">
+<h2>Projects</h2>
+<p class="lede">Three applied projects. Each one takes messy input, applies a model, and turns the result into something a person can act on.</p>
+
+<article class="proj">
+<div><h3>PlacementSense AI</h3><div class="tags"><span>Python</span><span>Scikit-learn</span><span>Flask</span></div></div>
+<div>
+<p>A web app that predicts a student’s placement outcome from academic and personal attributes.</p>
+<ul>
+<li>Trained and compared Logistic Regression, SVM and Random Forest after scaling and encoding the features.</li>
+<li>Evaluated with accuracy and a confusion matrix: about 79% test accuracy.</li>
+<li>Connected the model to a Flask backend. The result page shows probability, risk level, strengths and recommendations.</li>
+</ul>
+<div class="why"><b>Relevance:</b> I designed the output for a reader, not just a score. Designers need tools that explain themselves the same way.</div>
+</div>
+</article>
+
+<article class="proj">
+<div><h3>EcoDrive AI</h3><div class="tags"><span>Random Forest</span><span>Linear Regression</span><span>OpenRouteService API</span><span>Flask</span></div></div>
+<div>
+<p>Predicts vehicle mileage and CO2 emissions, and compares routes by distance and estimated emissions.</p>
+<ul>
+<li>Random Forest for mileage prediction, Linear Regression for emission estimates.</li>
+<li>Integrated the OpenRouteService API for route data and alternative-route comparison.</li>
+<li>Wired the models into backend logic so one request returns vehicle and route insights together.</li>
+</ul>
+<div class="why"><b>Relevance:</b> Ather works on vehicles. This project shows I can connect a model to a live external API and present trade-offs side by side.</div>
+</div>
+</article>
+
+<article class="proj">
+<div><h3>AI Fitness Trainer</h3><div class="tags"><span>OpenCV</span><span>MediaPipe</span><span>Pose estimation</span></div></div>
+<div>
+<p>A computer vision app that tracks exercise movement and gives posture feedback.</p>
+<ul>
+<li>OpenCV for image processing, MediaPipe for body-landmark detection.</li>
+<li>Turned joint positions into logic that analyses movement and supports workout tracking.</li>
+</ul>
+<div class="why"><b>Relevance:</b> Working with visual input is the closest thing in my portfolio to a design workflow. The same landmark and image-processing techniques carry over to visual tools.</div>
+</div>
+</article>
+</section>
+
+<section id="fit">
+<h2>How I match the role</h2>
+<div class="fit">
+<div><h3>Programming</h3><p>Python day to day: Pandas, NumPy, Scikit-learn, OpenCV. Comfortable scripting and automating.</p></div>
+<div><h3>Building and deploying</h3><p>Flask apps with REST APIs and Joblib-saved models, built so someone else can use them in a browser.</p></div>
+<div><h3>Data and insight</h3><p>Siemens analytics internship: Python, SQL, ETL and Power BI dashboards. I’m used to turning data into KPIs people read.</p></div>
+<div><h3>Communication</h3><p>Fluent English, native Telugu, conversational Hindi. I can explain technical work to non-technical teams.</p></div>
+</div>
+</section>
+
+<section>
+<div class="two">
+<div><h3>Experience</h3>
+<p><b>Data Analytics Intern, Siemens Technology Pvt. Ltd.</b> (June 2025)</p>
+<p style="color:var(--muted)">Cleaned and transformed structured data with Python and SQL, wrote and modified SQL queries for reporting, applied ETL concepts, and built interactive Power BI dashboards for KPIs.</p></div>
+<div><h3>Education and certification</h3>
+<p><b>B.Tech, Computer Science and Engineering</b><br>SRM Institute of Science and Technology, Chennai. CGPA 8.85/10</p>
+<p><b>AWS Certified Cloud Practitioner</b></p></div>
+</div>
+</section>
+
+<footer id="contact">
+<h2>Let’s talk about your designers’ workflow.</h2>
+<p>I’d like to start by watching how the team works and finding the first small thing to fix.</p>
+<div class="btns"><a class="btn main" href="mailto:mudunuriruthwik@gmail.com">mudunuriruthwik@gmail.com</a><a class="btn" href="tel:+919853822999">+91 98538 22999</a><a class="btn" href="https://www.linkedin.com/" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/" rel="noopener">GitHub</a></div>
+</footer>
+</div>
+
+<script>
+var D=[
+{p:"The saved reference is in a folder nobody else can search, and it has no tags.",s:"A shared moodboard index. Images and links are tagged automatically (type, colour, theme) so the team can search in plain words.",f:"Python script plus a small Flask page. I’d start with one designer’s folders and measure time-to-find before and after."},
+{p:"Each variation is rebuilt by hand, even though only a few parameters change.",s:"A prompt-and-parameter template that generates a batch of variations in one run and lays them out in a review sheet.",f:"Test two or three generative tools on a real brief first, and keep only the one designers actually prefer."},
+{p:"There is no shared record of what was tested, what worked and what didn’t.",s:"A simple scorecard and a short tutorial for each tool: quality, speed, cost, learning curve, fit for each design team.",f:"A living internal page with examples from Ather’s own briefs, updated after every test."},
+{p:"Conventions live in people’s heads, so files get named and filed differently every time.",s:"A small utility that renames and sorts exported files to the team convention, with a one-click run.",f:"Ask IT and designers to agree on the convention first, then script it. Ship it with a one-page guide."}
+];
+var out=document.getElementById("out"),tabs=document.querySelectorAll("#tabs button");
+function show(i){
+out.innerHTML="<dt>What’s really going on</dt><dd>"+D[i].p+"</dd><dt>Tool I’d build</dt><dd>"+D[i].s+"</dd><dt>How I’d start</dt><dd>"+D[i].f+"</dd>";
+tabs.forEach(function(b,j){b.setAttribute("aria-selected",j===i?"true":"false")});
+}
+tabs.forEach(function(b){b.addEventListener("click",function(){show(+b.dataset.i)})});
+show(0);
+</script>
+</body>
+</html>
